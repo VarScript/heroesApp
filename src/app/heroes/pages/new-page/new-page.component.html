@@ -10,33 +10,37 @@
   <div class="col-12 sm:col-6">
     <mat-card>
       <mat-card-content>
-        <div class="grid">
+        <form class="grid" [formGroup]="heroForm" (ngSubmit)="onSubmit()">
           <mat-form-field class="col-12 sm:col-6">
             <mat-label>Super Héroe</mat-label>
-            <input matInput type="text" required>
+            <input matInput type="text" required formControlName="superhero">
           </mat-form-field>
           <mat-form-field class="col-12 sm:col-6">
             <mat-label>Alter Ego</mat-label>
-            <input matInput type="text" required>
+            <input matInput type="text" required formControlName="alter_ego">
           </mat-form-field>
           <mat-form-field class="col-12">
             <mat-label>Primera aparición</mat-label>
-            <input matInput type="text" required>
+            <input matInput type="text" required formControlName="first_appearance">
           </mat-form-field>
           <mat-form-field class="col-12">
             <mat-label>Personajes</mat-label>
-            <input matInput type="text" required>
+            <input matInput type="text" required formControlName="characters">
           </mat-form-field>
           <mat-form-field class="col-12">
             <mat-label>Creador</mat-label>
-            <mat-select required>
+            <mat-select required formControlName="publisher">
               <mat-option *ngFor="let publiser of publishers" [value]="publiser.id"> {{publiser.desc}} </mat-option>
             </mat-select>
           </mat-form-field>
-        </div>
+          <mat-form-field class="col-12">
+            <mat-label>Imagen alternativa</mat-label>
+            <input matInput type="text" formControlName="alt_imag">
+          </mat-form-field>
+        </form>
         <div class="flex justify-content-between">
           <button mat-flat-button color="primary">Borrar</button>
-          <button mat-flat-button color="primary"><mat-icon>save</mat-icon> Guardar</button>
+          <button mat-flat-button color="primary" (click)="onSubmit()"><mat-icon>save</mat-icon> Guardar</button>
         </div>
 
       </mat-card-content>
