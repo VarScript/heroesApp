@@ -35,7 +35,7 @@
           </mat-form-field>
           <mat-form-field class="col-12">
             <mat-label>Imagen alternativa</mat-label>
-            <input matInput type="text" formControlName="alt_imag">
+            <input matInput type="text" formControlName="alt_img">
           </mat-form-field>
         </form>
         <div class="flex justify-content-between">
@@ -48,7 +48,7 @@
   </div>
   <div class="col-12 sm:col-6">
     <mat-card>
-      <img src="" alt="Imágen del héroe" mat-card-image>
+      <img [src]="currentHero | heroImage" alt="Imágen del héroe" mat-card-image>
     </mat-card>
   </div>
 </div>
